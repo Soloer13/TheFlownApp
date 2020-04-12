@@ -1,0 +1,422 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "0e75a97cd87be972aefdc7cbfc120346",
+    "entities": [
+      {
+        "tableName": "issue_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `issueName` TEXT, `issueDescription` TEXT, `issueDate` INTEGER, `issuePhoto` TEXT, `issuePriority` INTEGER NOT NULL, `issueOwner` INTEGER NOT NULL, `issueSite` INTEGER NOT NULL, `issueProject` INTEGER NOT NULL, `issueStatus` INTEGER NOT NULL, `issueSolverId` INTEGER NOT NULL, `issueSolveDate` INTEGER, `Response` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueName",
+            "columnName": "issueName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "issueDescription",
+            "columnName": "issueDescription",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "issueDate",
+            "columnName": "issueDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "photo",
+            "columnName": "issuePhoto",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "issuePriority",
+            "columnName": "issuePriority",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueOwner",
+            "columnName": "issueOwner",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueSite",
+            "columnName": "issueSite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueProject",
+            "columnName": "issueProject",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueStatus",
+            "columnName": "issueStatus",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueSolverId",
+            "columnName": "issueSolverId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueSolveDate",
+            "columnName": "issueSolveDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Response",
+            "columnName": "Response",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "user_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `userName` TEXT, `siteId` INTEGER NOT NULL, `siteName` TEXT, `projectId` INTEGER NOT NULL, `projectName` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "userName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "siteId",
+            "columnName": "siteId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "siteName",
+            "columnName": "siteName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "projectId",
+            "columnName": "projectId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "projectName",
+            "columnName": "projectName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "newhijjlog_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `MMFIn` REAL NOT NULL, `MMFOut` REAL NOT NULL, `bagIn` REAL NOT NULL, `bagOut` REAL NOT NULL, `cartridgeIn` REAL NOT NULL, `cartridgeOut` REAL NOT NULL, `RO1stIn` REAL NOT NULL, `RO1stOut` REAL NOT NULL, `RO2ndIn` REAL NOT NULL, `RO2ndOut` REAL NOT NULL, `PXBackPressure` REAL NOT NULL, `feedFlow` REAL NOT NULL, `HPPFeed` REAL NOT NULL, `PXFeed` REAL NOT NULL, `feed1stpass` REAL NOT NULL, `feed2ndpass` REAL NOT NULL, `product1stpass` REAL NOT NULL, `product2ndpass` REAL NOT NULL, `voltage` REAL NOT NULL, `wellpump1` REAL NOT NULL, `wellpump2` REAL NOT NULL, `wellpump3` REAL NOT NULL, `wellpump4` REAL NOT NULL, `wellpump5` REAL NOT NULL, `filtratedPump` REAL NOT NULL, `HPP1` REAL NOT NULL, `HPP2` REAL NOT NULL, `HPP3` REAL NOT NULL, `BoosterPump` REAL NOT NULL, `HPP2ndPass` REAL NOT NULL, `productPump` REAL NOT NULL, `feedConductivity` REAL NOT NULL, `productConductivity1` REAL NOT NULL, `productConductivity2` REAL NOT NULL, `finalCond` REAL NOT NULL, `productPH` REAL NOT NULL, `feedPH` REAL NOT NULL, `feedORP` REAL NOT NULL, `feedTemp` REAL NOT NULL, `productChlorine` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "MMFIn",
+            "columnName": "MMFIn",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "MMFOut",
+            "columnName": "MMFOut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bagIn",
+            "columnName": "bagIn",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bagOut",
+            "columnName": "bagOut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cartridgeIn",
+            "columnName": "cartridgeIn",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cartridgeOut",
+            "columnName": "cartridgeOut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RO1stIn",
+            "columnName": "RO1stIn",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RO1stOut",
+            "columnName": "RO1stOut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RO2ndIn",
+            "columnName": "RO2ndIn",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RO2ndOut",
+            "columnName": "RO2ndOut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "PXBackPressure",
+            "columnName": "PXBackPressure",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feedFlow",
+            "columnName": "feedFlow",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HPPFeed",
+            "columnName": "HPPFeed",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "PXFeed",
+            "columnName": "PXFeed",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feed1stpass",
+            "columnName": "feed1stpass",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feed2ndpass",
+            "columnName": "feed2ndpass",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product1stpass",
+            "columnName": "product1stpass",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product2ndpass",
+            "columnName": "product2ndpass",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "voltage",
+            "columnName": "voltage",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wellpump1",
+            "columnName": "wellpump1",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wellpump2",
+            "columnName": "wellpump2",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wellpump3",
+            "columnName": "wellpump3",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wellpump4",
+            "columnName": "wellpump4",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wellpump5",
+            "columnName": "wellpump5",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "filtratedPump",
+            "columnName": "filtratedPump",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HPP1",
+            "columnName": "HPP1",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HPP2",
+            "columnName": "HPP2",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HPP3",
+            "columnName": "HPP3",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "boosterPump",
+            "columnName": "BoosterPump",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HPP2ndPass",
+            "columnName": "HPP2ndPass",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productPump",
+            "columnName": "productPump",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feedCond",
+            "columnName": "feedConductivity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productCond1",
+            "columnName": "productConductivity1",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productCond2",
+            "columnName": "productConductivity2",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "finalCond",
+            "columnName": "finalCond",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productPH",
+            "columnName": "productPH",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feedPH",
+            "columnName": "feedPH",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feedORP",
+            "columnName": "feedORP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feedTemp",
+            "columnName": "feedTemp",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productChlorine",
+            "columnName": "productChlorine",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0e75a97cd87be972aefdc7cbfc120346')"
+    ]
+  }
+}
