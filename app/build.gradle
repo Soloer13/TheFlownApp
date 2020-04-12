@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.theflown.theflownapp"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //room export directory
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        customDebugType {
+            debuggable true
+            //...
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    // Room components
+    implementation "androidx.room:room-runtime:2.2.3"
+    annotationProcessor "androidx.room:room-compiler:2.2.3"
+    androidTestImplementation "androidx.room:room-testing:2.2.3"
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+    // UI
+    implementation "com.google.android.material:material:1.1.0"
+    // Testing
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+
+
+    implementation('com.facebook.fresco:fresco:1.10.0')
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation 'com.github.medyo:fancybuttons:1.9.1'
+
+    //WorkManager
+    implementation "android.arch.work:work-runtime:1.0.1"
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    implementation 'com.github.medyo:fancybuttons:1.9.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'com.kaopiz:kprogresshud:1.2.0'
+    implementation 'com.github.stfalcon:frescoimageviewer:0.5.0'
+    implementation('com.facebook.fresco:fresco:1.10.0') {
+        exclude group: 'com.parse.bolts', module: 'bolts-android'
+    }
+}
